@@ -1,15 +1,21 @@
-﻿using AllUp.Models;
+﻿using AllUp.DAL;
+using AllUp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace AllUp.Controllers
 {
     public class HomeController : Controller
     {
-        
-        public IActionResult Index()
+        private readonly AppDbContext _db;
+        public HomeController(AppDbContext db)
         {
-            return View();
+            _db = db;
+        }
+        public async Task<IActionResult> Index()
+        {
+            return View(await _db.Categories.Where(x=>x.IsMain).ToListAsync());
         }
 
         public IActionResult Error()

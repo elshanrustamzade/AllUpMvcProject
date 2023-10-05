@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AllUp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace AllUp.DAL
 {
@@ -8,5 +9,6 @@ namespace AllUp.DAL
         {
             
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }
