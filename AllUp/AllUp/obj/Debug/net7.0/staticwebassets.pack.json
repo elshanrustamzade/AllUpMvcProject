@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\AllUp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\AllUp.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\css\\plugins\\animate.css",
       "PackagePath": "staticwebassets\\assets\\css\\plugins\\animate.css"
     },

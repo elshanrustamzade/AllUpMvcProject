@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "w1I5oqrxgdxFb5HCFURdZrn7FLOE6fytQh9MYXSA92s=",
+  "Hash": "EZM31dxhAgq0gg7V98kdL2EuMtx666yOJWgKHtk4SBs=",
   "Source": "AllUp",
   "BasePath": "_content/AllUp",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\AllUp.styles.css",
-      "SourceId": "AllUp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/AllUp",
-      "RelativePath": "AllUp.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\AllUp.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\AllUp.bundle.scp.css",
-      "SourceId": "AllUp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/AllUp",
-      "RelativePath": "AllUp.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\AllUp.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\css\\plugins\\animate.css",
       "SourceId": "AllUp",
