@@ -7,7 +7,7 @@
     <meta charset="utf-8">
 
     <!--====== Title ======-->
-    <title>Allup - Electronics Responsive eCommerce HTML Template.</title>
+    <title>@ViewBag.Title</title>
 
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,9 +72,10 @@
                                         <button type="button" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Setting <i class="icon ion-chevron-down"></i></button>
 
                                         <ul class="dropdown-menu" aria-labelledby="setting">
-                                            <li><a href="my-account.html">My account</a></li>
+                                            <li><a asp-controller="Settings" asp-action="Account">My account</a></li>
                                             <li><a asp-controller="Settings" asp-action="Checkout">Checkout</a></li>
-                                            <li><a href="login.html">Sign in</a></li>
+                                            <li><a asp-controller="Settings" asp-action="Register">Register</a></li>
+                                            <li><a asp-controller="Settings" asp-action="Login">Sign in</a></li>
                                         </ul>
                                     </div>
                                 </li>
@@ -1043,8 +1044,8 @@
     <!-- <script src="~/assets/js/plugins.min.js"></script> -->
     <!--====== Main Activation js ======-->
     <script src="~/assets/js/main.js"></script>
-
-
+    <!--====== Google Map js ======-->
+    @RenderSection("Scripts",false)
 
 
 </body>
