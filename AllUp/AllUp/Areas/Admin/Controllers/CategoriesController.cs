@@ -15,8 +15,13 @@ namespace AllUp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Category> categories = await _db.Categories.Include(x=>x.Children).Include(x => x.Parent).ToListAsync();
+            List<Category> categories = await _db.Categories.Include(x => x.Children).Include(x => x.Parent).ToListAsync();
             return View(categories);
+        }
+        public async Task<IActionResult> Create()
+        {
+            ViewBag.MainCategories = await _db.Categories.Where(x => x.IsMain).ToListAsync();
+            return View();
         }
 
     }
