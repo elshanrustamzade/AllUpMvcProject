@@ -1,0 +1,53 @@
+﻿@model Category
+
+<div class="col-6">
+    <div class="card shadow mb-4">
+        <div class="card-header">
+            <strong class="card-title">Update Category</strong>
+        </div>
+        <div class="card-body">
+
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
+                @if (Model.IsMain)
+                {
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input asp-for="Photo" accept="image/*" class="form-control">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                }
+                else
+                {
+                    <div class="form-group">
+                        <label>Select Main Category</label>
+                        <select class="form-control" name="mainCategoryId">
+
+                            @foreach (Category category in ViewBag.MainCategories)
+                            {
+                                <option value="@category.Id"> @category.Name </option>
+                            }
+
+                        </select>
+                    </div>
+                }
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a class="btn btn-secondary text-white mr-2" asp-action="Index">Go Back</a>
+
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+}
+
+
+

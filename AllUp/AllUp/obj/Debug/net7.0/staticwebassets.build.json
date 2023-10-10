@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xJzgc2tnVAagcExw/auIZELBcCFUVXU2IM/LKmWjtwk=",
+  "Hash": "P54JGtcZ7JlCJ9BrIrw2pxJ9ojTOG2hDoshQF/tiDQo=",
   "Source": "AllUp",
   "BasePath": "_content/AllUp",
   "Mode": "Default",
@@ -26639,6 +26639,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\361d53a2-d324-4178-94b6-2cf8043e995ecategory-9.jpg"
     },
     {
+      "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\a0375e9d-d81d-4c67-923f-b4812efce530author-1.png",
+      "SourceId": "AllUp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\",
+      "BasePath": "_content/AllUp",
+      "RelativePath": "assets/images/a0375e9d-d81d-4c67-923f-b4812efce530author-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\a0375e9d-d81d-4c67-923f-b4812efce530author-1.png"
+    },
+    {
       "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\author-1.png",
       "SourceId": "AllUp",
       "SourceType": "Discovered",
@@ -27215,6 +27232,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\brand\\brand-6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\c985b4d7-b21a-47c4-9e1d-482003f60239author-1.png",
+      "SourceId": "AllUp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\",
+      "BasePath": "_content/AllUp",
+      "RelativePath": "assets/images/c985b4d7-b21a-47c4-9e1d-482003f60239author-1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\c985b4d7-b21a-47c4-9e1d-482003f60239author-1.png"
     },
     {
       "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\category-1.jpg",
