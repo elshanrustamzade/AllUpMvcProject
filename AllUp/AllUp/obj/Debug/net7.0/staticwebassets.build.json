@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eiUMBj2xCtdZdzFEv/J7JrdV8Uw9n3TBlcRbNUL3c2A=",
+  "Hash": "xJzgc2tnVAagcExw/auIZELBcCFUVXU2IM/LKmWjtwk=",
   "Source": "AllUp",
   "BasePath": "_content/AllUp",
   "Mode": "Default",
@@ -26620,6 +26620,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\fonts\\ionicons28b5.woff"
+    },
+    {
+      "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\361d53a2-d324-4178-94b6-2cf8043e995ecategory-9.jpg",
+      "SourceId": "AllUp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\",
+      "BasePath": "_content/AllUp",
+      "RelativePath": "assets/images/361d53a2-d324-4178-94b6-2cf8043e995ecategory-9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\361d53a2-d324-4178-94b6-2cf8043e995ecategory-9.jpg"
     },
     {
       "Identity": "C:\\Users\\elsha\\OneDrive\\Desktop\\AllUp\\AllUp\\AllUp\\wwwroot\\assets\\images\\author-1.png",

@@ -21,15 +21,15 @@
                     <span class="text-danger" asp-validation-for="IsMain"></span>
                 </div>
 
-                <div class="form-group d-none">
+                <div class="form-group"  id="photoBox">
                     <label asp-for="Photo"></label>
                     <input asp-for="Photo" accept="image/*" class="form-control">
                     <span class="text-danger" asp-validation-for="Photo"></span>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="mainBox">
                     <label>Select Main Category</label>
-                    <select class="form-control" name="categoryId">
+                    <select class="form-control" name="mainCategoryId">
 
                         @foreach (Category category in ViewBag.MainCategories)
                         {
@@ -49,11 +49,24 @@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
     <script>
+       
+        if ($('#IsMain').prop('checked')) {
+            $("#photoBox").removeClass("d-none")
+            $("#mainBox").addClass("d-none")
+        }
+        else {
+            $("#photoBox").addClass("d-none")
+            $("#mainBox").removeClass("d-none")
+        }
         $(document).on("change", "#IsMain", function () {
-            if ($('#checkMeOut').prop('checked')) {
-                // something when checked
-            } else {
-                // something else when not
+            if ($('#IsMain').prop('checked')) {
+                $("#photoBox").removeClass("d-none")
+                $("#mainBox").addClass("d-none")
+            }
+            else 
+            {
+                $("#photoBox").addClass("d-none")
+                $("#mainBox").removeClass("d-none")
             }
         });
     </script>
