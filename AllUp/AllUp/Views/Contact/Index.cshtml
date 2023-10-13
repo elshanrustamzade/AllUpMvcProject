@@ -1,8 +1,7 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Contact";
 }
-
+@model ContactVM
 
 <!--====== Breadcrumb Part Start ======-->
 
@@ -33,32 +32,38 @@
             <div class="col-lg-7 col-xl-8">
                 <div class="contact-form mt-30">
                     <h4 class="allup-title">Billing Address</h4>
-                    <form id="contact-form" action="https://demo.hasthemes.com/allup/allup/~/assets/contact.php" method="POST">
+                       <div asp-validation-summary="ModelOnly" style="color:red"></div>
+                    <p>@ViewBag.Text</p>
+                    <form method="POST">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="single-form">
-                                    <input type="text" name="name" placeholder="Your Name">
+                                    <input asp-for="Name" placeholder="Your Name">
+                                    <span asp-validation-for="Name" style="color:red"></span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="single-form">
-                                    <input type="email" name="email" placeholder="Your Email">
+                                    <input asp-for="Email" placeholder="Your Email">
+                                    <span asp-validation-for="Email" style="color:red"></span>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-form">
-                                    <input type="text" name="subject" placeholder="Subject">
+                                    <input asp-for="Subject" placeholder="Subject">
+                                    <span asp-validation-for="Subject" style="color:red"></span>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="single-form">
-                                    <textarea name="message" placeholder="Your Message"></textarea>
+                                    <textarea asp-for="Message" placeholder="Your Message"></textarea>
+                                    <span asp-validation-for="Message" style="color:red"></span>
                                 </div>
                             </div>
                             <p class="form-message"></p>
                             <div class="col-md-12">
                                 <div class="single-form">
-                                    <button class="main-btn main-btn-2">Send Message</button>
+                                    <button type="submit" class="main-btn main-btn-2">Send Message</button>
                                 </div>
                             </div>
                         </div>
@@ -232,4 +237,5 @@
     <!--====== Google Map js ======-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5y0EF8dE6qwc03FcbXHJfXr4vEa7z54"></script>
     <script src="assets/js/map-script.js"></script>
+    <partial name="_ValidationScriptsPartial" />
 }

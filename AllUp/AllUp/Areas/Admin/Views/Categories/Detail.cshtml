@@ -1,0 +1,33 @@
+﻿@model Category
+
+<div class="col-6">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+
+            @if (Model.IsMain)
+            {
+                <div>
+                    <img src="~/assets/images/@Model.Image" style="width:200px;height:200px;object-fit:cover" />
+                </div>
+            }
+          
+           
+            <div style="margin-left:70px;color:red " >@Model.Name</div>
+            @if (Model.IsMain)
+            {
+                @foreach (Category child in Model.Children)
+                {
+                    <div style="color:green">@child.Name</div>
+                }
+            }
+            else
+            {
+                <p>@Model.Parent.Name</p>
+            }
+            <a class="btn btn-secondary text-white mr-2" asp-action="Index">Go Back</a>
+
+        </div>
+    </div>
+</div>
+
+

@@ -164,7 +164,7 @@ namespace AllUp.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Category? dbCategory = await _db.Categories.FirstOrDefaultAsync(x => x.Id == id);
+            Category? dbCategory = await _db.Categories.Include(x => x.Parent).Include(x=>x.Children).FirstOrDefaultAsync(x => x.Id == id);
             if (dbCategory == null)
             {
                 return BadRequest();

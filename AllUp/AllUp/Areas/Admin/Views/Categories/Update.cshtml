@@ -30,7 +30,14 @@
 
                             @foreach (Category category in ViewBag.MainCategories)
                             {
-                                <option value="@category.Id"> @category.Name </option>
+                                if (Model.ParentId == category.Id)
+                                {
+                                    <option selected value="@category.Id"> @category.Name </option>
+                                }
+                                else
+                                {
+                                    <option value="@category.Id"> @category.Name </option>
+                                }
                             }
 
                         </select>
