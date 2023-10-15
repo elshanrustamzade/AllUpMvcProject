@@ -22,4 +22,9 @@ namespace AllUp.Helpers
 
         }
     }
+    enum Roles
+    {
+        Admin,
+        Member
+    }
 }
