@@ -2,7 +2,9 @@
 @{
     ViewData["Title"] = "Register";
 }
+
 @model RegisterVM
+
 <!--====== Breadcrumb Part Start ======-->
 
 <div class="breadcrumb-area">
@@ -52,10 +54,10 @@
                             <input asp-for="CheckPassword" placeholder="Confirm Password">
                             <span asp-validation-for="CheckPassword" style="color:red;margin-left:10px"></span>
                         </div>
-                        <div class="custom-checkbox mt-30">
-                            <input type="checkbox" id="account-1">
-                            <label for="account-1"></label>
-                            <p>Receive Offers From Our Partners</p>
+                        <div class="login-toggle-btn">
+                            <input asp-for="IsRemember">
+                            <label for="remember">Remember me</label>
+                            <a>Forgot Password?</a>
                         </div>
                         <div class="custom-checkbox mt-30">
                             <input type="checkbox" id="account-2">

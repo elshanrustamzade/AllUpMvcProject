@@ -1,4 +1,6 @@
-﻿namespace AllUp.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace AllUp.Models
 {
     public class Product
     {
@@ -10,6 +12,8 @@
         public Brand Brand { get; set; }
         public int BrandId { get; set; }
         public bool IsDeactive { get; set; }
+        [NotMapped]
+        public List<IFormFile> Photos { get; set; }
         public List<ProductImage> ProductImages { get; set; }
         public ProductDetail ProductDetail { get; set; }
         public List<ProductCategory> ProductCategories { get; set; }

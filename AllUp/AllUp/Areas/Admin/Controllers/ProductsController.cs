@@ -16,5 +16,9 @@ namespace AllUp.Areas.Admin.Controllers
         {
             return View(await _db.Products.ToListAsync());
         }
+        public IActionResult Create()
+        {
+            return View();  
+        }
     }
 }
