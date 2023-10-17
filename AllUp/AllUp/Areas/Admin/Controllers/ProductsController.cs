@@ -16,9 +16,13 @@ namespace AllUp.Areas.Admin.Controllers
         {
             return View(await _db.Products.ToListAsync());
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View();  
+            ViewBag.Brands = await _db.Brands.ToListAsync();
+            ViewBag.Tags = await _db.Tags.ToListAsync();
+            ViewBag.MainCategories = await _db.Categories.Where(x => x.IsMain).ToListAsync();
+            ViewBag.ChildCategories = (await _db.Categories.Include(x => x.Children).FirstOrDefaultAsync())?.Children;
+            return View();
         }
     }
 }

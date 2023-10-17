@@ -9,25 +9,79 @@
 
             <form method="post" enctype="multipart/form-data">
 
-                <div class="form-group">
-                    <label asp-for="Name"></label>
-                    <input asp-for="Name" class="form-control">
-                    <span class="text-danger" asp-validation-for="Name"></span>
-                </div>
-
                 <div class="form-group" id="photoBox">
                     <label asp-for="Photos"></label>
                     <input asp-for="Photos" accept="image/*" class="form-control">
                     <span class="text-danger" asp-validation-for="Photos"></span>
                 </div>
 
-              @*   <div class="form-group">
-                    <label asp-for="IsMain"></label>
-                    <input asp-for="IsMain">
-                    <span class="text-danger" asp-validation-for="IsMain"></span>
-                </div> *@
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control">
+                    <span class="text-danger" asp-validation-for="Name"></span>
+                </div>
 
-            @*     <div class="form-group" id="mainBox">
+                <div class="form-group">
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" class="form-control">
+                    <span class="text-danger" asp-validation-for="Price"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="OldPrice"></label>
+                    <input asp-for="OldPrice" class="form-control">
+                    <span class="text-danger" asp-validation-for="OldPrice"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Rate"></label>
+                    <input asp-for="Rate" class="form-control">
+                    <span class="text-danger" asp-validation-for="Rate"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductDetail.Description"></label>
+                    <input asp-for="ProductDetail.Description" class="form-control">
+                    <span class="text-danger" asp-validation-for="ProductDetail.Description"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductDetail.ProductCode"></label>
+                    <input asp-for="ProductDetail.ProductCode" class="form-control">
+                    <span class="text-danger" asp-validation-for="ProductDetail.ProductCode"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductDetail.Tax"></label>
+                    <input asp-for="ProductDetail.Tax" class="form-control">
+                    <span class="text-danger" asp-validation-for="ProductDetail.Tax"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Brand</label>
+                    <select class="form-control" name="brandId">
+
+                        @foreach (Brand brand in ViewBag.Brands)
+                        {
+                            <option value="@brand.Id"> @brand.Name </option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Tags</label>
+                    <select class="form-control" name="tagId" multiple>
+
+                        @foreach (Tag tag in ViewBag.Tags)
+                        {
+                            <option value="@tag.Id"> @tag.Name </option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group" id="mainBox">
                     <label>Select Main Category</label>
                     <select class="form-control" name="mainCategoryId">
 
@@ -37,6 +91,42 @@
                         }
 
                     </select>
+                </div>
+
+                <div class="form-group" id="mainBox">
+                    <label>Select Child Category</label>
+                    <select class="form-control" name="childCategoryId">
+
+                        @foreach (Category category in ViewBag.ChildCategories)
+                        {
+                            <option value="@category.Id"> @category.Name </option>
+                        }
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProductDetail.HasStock"></label>
+                    <input asp-for="ProductDetail.HasStock">
+                    <span class="text-danger" asp-validation-for="ProductDetail.HasStock"></span>
+                </div>
+
+                @*   <div class="form-group">
+                <label asp-for="IsMain"></label>
+                <input asp-for="IsMain">
+                <span class="text-danger" asp-validation-for="IsMain"></span>
+                </div> *@
+
+                @*     <div class="form-group" id="mainBox">
+                <label>Select Main Category</label>
+                <select class="form-control" name="mainCategoryId">
+
+                @foreach (Category category in ViewBag.MainCategories)
+                {
+                <option value="@category.Id"> @category.Name </option>
+                }
+
+                </select>
                 </div> *@
 
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -49,7 +139,24 @@
 @section Scripts{
     <partial name="_ValidationScriptsPartial" />
     <script>
-
+        if ($('#IsMain').prop('checked')) {
+            $("#photoBox").removeClass("d-none")
+            $("#mainBox").addClass("d-none")
+        }
+        else {
+            $("#photoBox").addClass("d-none")
+            $("#mainBox").removeClass("d-none")
+        }
+        $(document).on("change", "#IsMain", function () {
+            if ($('#IsMain').prop('checked')) {
+                $("#photoBox").removeClass("d-none")
+                $("#mainBox").addClass("d-none")
+            }
+            else {
+                $("#photoBox").addClass("d-none")
+                $("#mainBox").removeClass("d-none")
+            }
+        });
     </script>
 }
 
