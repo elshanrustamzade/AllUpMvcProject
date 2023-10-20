@@ -1,4 +1,5 @@
 ﻿using AllUp.DAL;
+using AllUp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +15,8 @@ namespace AllUp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _db.Products.ToListAsync());
+            List<Product> products = await _db.Products.ToListAsync();
+            return View(products);
         }
         public async Task<IActionResult> Create()
         {
@@ -23,6 +25,11 @@ namespace AllUp.Areas.Admin.Controllers
             ViewBag.MainCategories = await _db.Categories.Where(x => x.IsMain).ToListAsync();
             ViewBag.ChildCategories = (await _db.Categories.Include(x => x.Children).FirstOrDefaultAsync())?.Children;
             return View();
+        }
+        public async Task<IActionResult> LoadChildCategories(int mainCategoryId)
+        {
+            List<Category> childCategories = await _db.Categories.Where(x => x.ParentId == mainCategoryId).ToListAsync();
+            return PartialView("_LoadChildCategoriesPartial", childCategories);
         }
     }
 }
