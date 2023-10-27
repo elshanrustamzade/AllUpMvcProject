@@ -71,7 +71,7 @@
 
                 <div class="form-group">
                     <label>Select Tags</label>
-                    <select class="form-control" name="tagId" multiple>
+                    <select class="form-control" name="tagsId[]" multiple>
 
                         @foreach (Tag tag in ViewBag.Tags)
                         {
@@ -95,7 +95,7 @@
 
                 <div class="form-group" id="mainBox">
                     <label>Select Child Category</label>
-                    <select class="form-control" name="childCategoryId" id="childCategory">
+                    <select class="form-control" name="childCategoryId" id="childCategoryId">
 
                         @foreach (Category category in ViewBag.ChildCategories)
                         {
@@ -130,8 +130,8 @@
                     "mainCategoryId": $("#mainCategoryId").val()
                 },
                 success: function (res) {
-                    $("#childCategory").empty()
-                    $("#childCategory").append(res)
+                    $("#childCategoryId").empty()
+                    $("#childCategoryId").append(res)
                 }
             });
         });
