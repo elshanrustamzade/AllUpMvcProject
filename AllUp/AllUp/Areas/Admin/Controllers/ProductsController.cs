@@ -19,7 +19,15 @@ namespace AllUp.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            List<Product> products = await _db.Products.ToListAsync();
+            List<Product> products = await _db.Products
+                .Include(x=>x.ProductImages)
+                .Include(x=>x.ProductDetail)
+                .Include(x=>x.Brand)
+                .Include(x=>x.ProductTags)
+                .ThenInclude(x=>x.Tag)
+                .Include(x => x.ProductCategories)
+                .ThenInclude(x=>x.Category)
+                .ToListAsync();
             return View(products);
         }
         public async Task<IActionResult> Create()
@@ -32,7 +40,7 @@ namespace AllUp.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Product product, int brandId, int mainCatId, int childCatId, int[] tagsId)
+        public async Task<IActionResult> Create(Product product, int brandId, int mainCategoryId, int? childCategoryId, int[] tagsId)
         {
 
             #region Get
@@ -80,6 +88,36 @@ namespace AllUp.Areas.Admin.Controllers
             product.ProductImages = productImages;
             #endregion
 
+            #region Product Tags
+            List<ProductTag> productTags = new();
+            foreach (int tagId in tagsId)
+            {
+                ProductTag productTag = new()
+                {
+                    TagId = tagId,
+                };
+                productTags.Add(productTag);
+            }
+            product.ProductTags = productTags;
+            #endregion
+
+            #region Product Categories
+
+            List<ProductCategory> productCategories = new List<ProductCategory>();
+            ProductCategory mainProductCategory = new ProductCategory();
+            mainProductCategory.CategoryId = mainCategoryId;
+            productCategories.Add(mainProductCategory);
+            if (childCategoryId != null)
+            {
+                ProductCategory childProductCategory = new ProductCategory();
+                childProductCategory.CategoryId = (int)childCategoryId;
+                productCategories.Add(childProductCategory);
+            }
+            product.ProductCategories = productCategories;
+
+            #endregion
+
+            product.BrandId = brandId;
             await _db.Products.AddAsync(product);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
